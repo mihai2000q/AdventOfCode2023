@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2023.Weeks.Week1;
 
-namespace AdventOfCode2023.Tests.Week1;
+namespace AdventOfCode2023.Tests.Weeks.Week1;
 
 public class Day1Test
 {
