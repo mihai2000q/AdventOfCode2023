@@ -1,0 +1,21 @@
+﻿<Application x:Class="AdventOfCode2023.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Theme/Colors.xaml" />
+                 
+                 <ResourceDictionary Source="Styles/Common/ButtonStyle.xaml" />
+                 <ResourceDictionary Source="Styles/Common/TextBlockStyle.xaml" />
+                 <ResourceDictionary Source="Styles/Common/TextBoxStyle.xaml" />
+                 <ResourceDictionary Source="Styles/Common/WindowStyle.xaml" />
+                 
+                 <!-- Buttons -->
+                 <ResourceDictionary Source="Styles/Button/SubmitButton.xaml" />
+                 <ResourceDictionary Source="Styles/Button/WindowButton.xaml" />
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>

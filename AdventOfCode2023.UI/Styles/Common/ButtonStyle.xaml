@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Montserrat" />
+        <Setter Property="Background" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="Foreground" Value="{StaticResource OnPrimaryColor}" />
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Border.CornerRadius" Value="8"/>
+    </Style>
+</ResourceDictionary>

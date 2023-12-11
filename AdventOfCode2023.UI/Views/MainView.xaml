@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="AdventOfCode2023.UI.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:userControls="clr-namespace:AdventOfCode2023.UI.UserControls"
+             xmlns:viewModels="clr-namespace:AdventOfCode2023.UI.ViewModels"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="600">
+
+    <UserControl.DataContext>
+        <viewModels:MainViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <userControls:DaysSelector
+            Grid.Column="0"
+            Days="{Binding Days, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedDay="{Binding SelectedDay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <userControls:Title Margin="0 8 0 8" />
+
+            <userControls:InputTextField Grid.Row="1"
+                                         InputText="{Binding Input, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                         Margin="25 16 25 0" />
+
+            <StackPanel Grid.Row="2" Margin="10">
+                <ProgressBar IsIndeterminate="True"
+                             Visibility="{Binding IsLoading, UpdateSourceTrigger=PropertyChanged}"
+                             Foreground="DodgerBlue" Height="5.5"
+                             HorizontalAlignment="Stretch"
+                             Margin="8 2 8 10" />
+                <Button Style="{StaticResource SubmitButton}"
+                        HorizontalAlignment="Center"
+                        Margin="0 2 0 6"
+                        Command="{Binding SubmitCommand}">
+                    <WrapPanel>
+                        <TextBlock Text="Submit" />
+                        <fa:IconBlock Icon="PaperPlane" Margin="5.5 0 0 0" />
+                    </WrapPanel>
+                </Button>
+                <WrapPanel Margin="0 4"
+                           Visibility="{Binding VisibilityAnswer1}" HorizontalAlignment="Center">
+                    <TextBlock Text="Part 1: "
+                               FontSize="16" VerticalAlignment="Center" />
+                    <TextBox FontSize="16" FontWeight="Bold"
+                             Background="Transparent" IsReadOnly="True" BorderThickness="0"
+                             VerticalAlignment="Center"
+                             Text="{Binding Answer1, Mode=OneWay}" />
+                </WrapPanel>
+                <WrapPanel Margin="0 4"
+                           Visibility="{Binding VisibilityAnswer2}" HorizontalAlignment="Center">
+                    <TextBlock Text="Part 2: "
+                               FontSize="16" VerticalAlignment="Center" />
+                    <TextBox FontSize="16" FontWeight="Bold"
+                             Background="Transparent" IsReadOnly="True" BorderThickness="0"
+                             VerticalAlignment="Center"
+                             Text="{Binding Answer2, Mode=OneWay}" />
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
