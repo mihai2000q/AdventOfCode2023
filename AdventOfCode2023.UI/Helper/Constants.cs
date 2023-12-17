@@ -9,8 +9,13 @@ public static class Constants
     public static readonly ObservableCollection<Day> Days = [
         new Day
         {
-            DisplayText = "Day 1 - Trebuchet?!",
+            DisplayText = "Day 1: Trebuchet?!",
             Value = new Day1()
+        },
+        new Day
+        {
+            DisplayText = "Day 2: Cube Conundrum",
+            Value = new Day2()
         }
     ];
 }
