@@ -16,6 +16,11 @@ public static class Constants
         {
             DisplayText = "Day 2: Cube Conundrum",
             Value = new Day2()
+        },
+        new Day
+        {
+            DisplayText = "Day 3: Gear Ratios",
+            Value = new Day3()
         }
     ];
 }
